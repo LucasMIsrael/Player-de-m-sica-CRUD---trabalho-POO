@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="047780300_1436100383-Freddie-freddie-mercury-31144609-1572-886-PhotoRoom.png" />
+    <None Remove="189638.png" />
+    <None Remove="avatars-000127777717-ap1rhx-original-PhotoRoom.png" />
+    <None Remove="axl-rose-psd-422429-PhotoRoom.png" />
+    <None Remove="notas-musicais-PhotoRoom.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="047780300_1436100383-Freddie-freddie-mercury-31144609-1572-886-PhotoRoom.png" />
+    <Resource Include="189638.png" />
+    <Resource Include="avatars-000127777717-ap1rhx-original-PhotoRoom.png" />
+    <Resource Include="axl-rose-psd-422429-PhotoRoom.png" />
+    <Resource Include="notas-musicais-PhotoRoom.png" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,107 @@
+﻿<Window x:Name="JanelaPrincipal" x:Class="ListaDeMusicas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ListaDeMusicas"
+        mc:Ignorable="d"
+        Title="Lista de Músicas" Height="450" Width="800" Loaded="JanelaPrincipal_Loaded">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF0D9B7A"/>
+                <GradientStop Color="#FFAEECDD" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label Content="Sua lista de Músicas" HorizontalAlignment="Left" Margin="487,23,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Rockwell Extra Bold"/>
+        <DataGrid x:Name="DTGmusicas" HorizontalAlignment="Left" Height="192" Margin="420,56,0,0" VerticalAlignment="Top" Width="312" CanUserAddRows="False" CanUserDeleteRows="False" SelectionChanged="DTGmusicas_SelectionChanged" GotFocus="DTGmusicas_GotFocus" BorderBrush="#FF135595" BorderThickness="1,1,1,2" Background="#FFBAF0E3"/>
+        <Button x:Name="BTNalterar" Content="Editar " HorizontalAlignment="Left" Margin="163,56,0,0" VerticalAlignment="Top" Width="96" Height="22" Click="BTNalterar_Click" Foreground="White" BorderBrush="#FF063B78" BorderThickness="1,1,1,2">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF126E6A"/>
+                    <GradientStop Color="#FF16A09A" Offset="0.707"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BTNcadastrar" Content="Adicionar" HorizontalAlignment="Left" Margin="46,56,0,0" VerticalAlignment="Top" Width="96" Height="22" Click="BTNcadastrar_Click" Foreground="White" BorderBrush="#FF063B78" BorderThickness="1,1,1,2">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF126E6A"/>
+                    <GradientStop Color="#FF16A09A" Offset="0.707"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BTNcancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="228,226,0,0" VerticalAlignment="Top" Height="22" Width="108" Click="BTNcancelar_Click" BorderBrush="#FF063B7A" Foreground="White" BorderThickness="1,1,1,2">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF126E6A"/>
+                    <GradientStop Color="#FF16A09A" Offset="0.707"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BTNgravar" Content="Salvar" HorizontalAlignment="Left" Margin="91,226,0,0" VerticalAlignment="Top" Height="22" Width="108" Click="BTNgravar_Click" BorderBrush="#FF063B7A" Foreground="White" BorderThickness="1,1,1,2">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF126E6A"/>
+                    <GradientStop Color="#FF16A09A" Offset="0.707"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Label Content="Adicione suas Músicas" HorizontalAlignment="Left" Margin="111,23,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Rockwell Extra Bold"/>
+        <Label Content="ID da música     :" HorizontalAlignment="Left" Margin="46,93,0,0" VerticalAlignment="Top" Width="101"/>
+        <Label Content="Título da música:" HorizontalAlignment="Left" Margin="46,124,0,0" VerticalAlignment="Top"/>
+        <Label Content="Banda/cantor(a) :" HorizontalAlignment="Left" Margin="46,155,0,0" VerticalAlignment="Top"/>
+        <Label Content="Albúm                :" HorizontalAlignment="Left" Margin="46,185,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TBXcodigo" HorizontalAlignment="Left" Margin="156,97,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="219" BorderBrush="#FF063B7A" BorderThickness="1,1,1,2"/>
+        <TextBox x:Name="TBXnome" HorizontalAlignment="Left" Margin="156,128,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="219" BorderBrush="#FF063B7A" BorderThickness="1,1,1,2"/>
+        <TextBox x:Name="TBXbanda" HorizontalAlignment="Left" Margin="156,159,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="219" BorderBrush="#FF063B7A" BorderThickness="1,1,1,2"/>
+        <TextBox x:Name="TBXalbum" HorizontalAlignment="Left" Margin="156,189,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="219" BorderBrush="#FF063B7A" BorderThickness="1,1,1,2"/>
+        <Image HorizontalAlignment="Left" Height="166" Margin="0,268,0,0" VerticalAlignment="Top" Width="168" Source="/notas-musicais-PhotoRoom.png"/>
+        <Image HorizontalAlignment="Left" Height="65" Margin="730,0,0,0" VerticalAlignment="Top" Width="77" Source="/avatars-000127777717-ap1rhx-original-PhotoRoom.png"/>
+        <Button x:Name="BTNdeletar" Content="Excluir" HorizontalAlignment="Left" Margin="279,56,0,0" VerticalAlignment="Top" Height="22" Width="96" BorderBrush="#FF063B7A" Foreground="White" BorderThickness="1,1,1,2" Click="BTNdeletar_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF126E6A"/>
+                    <GradientStop Color="#FF16A09A" Offset="0.707"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Image HorizontalAlignment="Left" Height="137" Margin="490,297,0,0" VerticalAlignment="Top" Width="188" Source="/axl-rose-psd-422429-PhotoRoom.png"/>
+        <Image HorizontalAlignment="Left" Height="203" Margin="576,270,0,0" VerticalAlignment="Top" Width="219" Source="/047780300_1436100383-Freddie-freddie-mercury-31144609-1572-886-PhotoRoom.png"/>
+        <TextBox x:Name="TBXaudio" HorizontalAlignment="Left" Margin="284,307,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" BorderBrush="#FF063B7A" BorderThickness="1,1,1,2" MaxLines="1" MaxLength="0"/>
+        <Button x:Name="BTNabrir" Content="Abrir" HorizontalAlignment="Left" Margin="368,281,0,0" VerticalAlignment="Top" Click="BTNabrir_Click" Height="21" Width="52" BorderThickness="1,1,1,2" BorderBrush="#FF063B7A" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF126E6A"/>
+                    <GradientStop Color="#FF16A09A" Offset="0.707"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BTNplay" Content="Play" HorizontalAlignment="Left" Margin="284,333,0,0" VerticalAlignment="Top" Click="BTNplay_Click" Height="22" Width="52" BorderBrush="#FF063B7A" Foreground="White" BorderThickness="1,1,1,2" SnapsToDevicePixels="True">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF126E6A"/>
+                    <GradientStop Color="#FF16A09A" Offset="0.707"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BTNpause" Content="Pause" HorizontalAlignment="Left" Margin="368,333,0,0" VerticalAlignment="Top" Click="BTNpause_Click" Height="22" Width="52" BorderThickness="1,1,1,2" BorderBrush="#FF063B7A" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF126E6A"/>
+                    <GradientStop Color="#FF16A09A" Offset="0.707"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BTNstop" Content="Stop" HorizontalAlignment="Left" Margin="453,333,0,0" VerticalAlignment="Top" Click="BTNstop_Click" Width="51" Height="22" BorderThickness="1,1,1,2" BorderBrush="#FF063B7A" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF126E6A"/>
+                    <GradientStop Color="#FF16A09A" Offset="0.707"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Image HorizontalAlignment="Left" Height="23" Margin="342,280,0,0" VerticalAlignment="Top" Width="26" Source="/189638.png"/>
+
+    </Grid>
+</Window>
